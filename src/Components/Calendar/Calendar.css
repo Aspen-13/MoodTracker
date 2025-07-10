@@ -2,17 +2,20 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
+  margin: auto;
   margin-top: 2rem;
+  max-width: 50rem;
 }
 
 .day-box {
+  aspect-ratio: 1/ 1; /* Keep the box a square */
   background: #000000;
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  min-height: 70px;
-  min-width: 70px;
+  min-height: 40px;
+  max-height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
