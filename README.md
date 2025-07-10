@@ -8,5 +8,6 @@ Features:
 - Mood is saved in localStorage
 - Emoji popup overlay
 - Fully responsive & clean UI
+- Highlights today's date
 
 Demo (https://mood-tracker-aspen13s-projects.vercel.app/)
