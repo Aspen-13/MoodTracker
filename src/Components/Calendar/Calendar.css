@@ -22,6 +22,15 @@
   text-align: center;
 }
 
+.day-box:hover {
+  opacity: 0.5;
+}
+
+.today-day-box {
+  background: rgba(255, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
 .emoji-box {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
 }

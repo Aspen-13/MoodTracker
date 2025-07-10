@@ -8,6 +8,8 @@ const daysInMonth = new Date(
   0
 ).getDate();
 
+const todayDate = new Date().getDate();
+
 function Calendar() {
   const [selectedDays, setSelectedDays] = useState<number | null>(null);
   const [moods, setMoods] = useState<{ [day: number]: string }>({});
@@ -33,7 +35,7 @@ function Calendar() {
         return (
           <div
             key={day}
-            className="day-box"
+            className={`day-box ${day !== todayDate ? " " : "today-day-box"}`}
             onClick={() => setSelectedDays(day)}
           >
             <div className="day"> {day} </div>
