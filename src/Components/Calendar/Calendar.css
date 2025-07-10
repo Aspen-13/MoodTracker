@@ -8,6 +8,7 @@
 }
 
 .day-box {
+  position: relative;
   aspect-ratio: 1/ 1; /* Keep the box a square */
   background: #000000;
   border: 1px solid #ddd;
@@ -15,11 +16,11 @@
   border-radius: 0.5rem;
   cursor: pointer;
   min-height: 50px;
-  max-height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .day-box:hover {
@@ -32,11 +33,16 @@
 }
 
 .emoji-box {
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.5rem, 3.5rem);
 }
 
 .day {
-  font-size: clamp(0.5rem, 2vw, 2.5rem);
+  position: absolute;
+  top: 4%;
+  left: 6%;
+  color: white;
+  font-weight: 600;
+  font-size: clamp(0.7rem, 1rem, 1.5rem);
 }
 
 @media (max-width: 1100px) {
