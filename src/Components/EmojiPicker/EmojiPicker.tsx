@@ -5,7 +5,7 @@ type props = {
   onClose: () => void;
 };
 
-const emojis = ["😂", "😒", "😭", "😡", "😐"];
+const emojis = ["😂", "😒", "😭", "😡", "😐", "😊", ""];
 function EmojiPicker({ onSelect, onClose }: props) {
   return (
     <div className="emoji-overlay" onClick={onClose}>
@@ -14,7 +14,7 @@ function EmojiPicker({ onSelect, onClose }: props) {
         <div className="emoji-grid">
           {emojis.map((emoji) => (
             <Button key={emoji} onClick={() => onSelect(emoji)}>
-              {emoji}
+              {emoji ? emoji : "Remove"}
             </Button>
           ))}
         </div>
