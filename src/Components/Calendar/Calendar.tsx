@@ -36,8 +36,8 @@ function Calendar() {
             className="day-box"
             onClick={() => setSelectedDays(day)}
           >
-            <div> {day} </div>
-            <div style={{ fontSize: "2rem" }}> {moods[day]} </div>
+            <div className="day"> {day} </div>
+            <div className="emoji-box">{moods[day]}</div>
           </div>
         );
       })}
