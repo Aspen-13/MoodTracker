@@ -44,10 +44,12 @@ function EmojiPicker({ onSave, onClose, defaultEntry }: props) {
           id={"mood-entry-text-area"}
           placeholder="Write about your feelings"
         />
-        <Button onClick={handleSave} disabled={!selectedEmoji}>
-          Save
-        </Button>
-        <Button onClick={() => onSave({ mood: "", note: "" })}>Clear</Button>
+        <div className="emoji-panel-button-span">
+          <Button onClick={handleSave} disabled={!selectedEmoji}>
+            Save
+          </Button>
+          <Button onClick={() => onSave({ mood: "", note: "" })}>Clear</Button>
+        </div>
       </div>
     </div>
   );

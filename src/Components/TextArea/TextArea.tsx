@@ -16,17 +16,15 @@ function TextArea({
   id,
 }: moodProps) {
   return (
-    <div>
-      <textarea
-        id={id}
-        name={id}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        rows={rows}
-        className="mood-text-area"
-      ></textarea>
-    </div>
+    <textarea
+      id={id}
+      name={id}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      rows={rows}
+      className="mood-text-area"
+    ></textarea>
   );
 }
 

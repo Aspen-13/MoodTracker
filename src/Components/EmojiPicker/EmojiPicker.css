@@ -38,3 +38,9 @@
   cursor: pointer;
   border: 1px solid #ddd;
 }
+
+.emoji-panel-button-span {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
