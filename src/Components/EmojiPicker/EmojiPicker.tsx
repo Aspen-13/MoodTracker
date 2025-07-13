@@ -47,6 +47,7 @@ function EmojiPicker({ onSave, onClose, defaultEntry }: props) {
         <Button onClick={handleSave} disabled={!selectedEmoji}>
           Save
         </Button>
+        <Button onClick={() => onSave({ mood: "", note: "" })}>Clear</Button>
       </div>
     </div>
   );

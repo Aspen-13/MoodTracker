@@ -10,5 +10,6 @@ Features:
 - Fully responsive & clean UI
 - Highlights today's date
 - Ability to enter some text about how you feel
+- Ability to clear the mood and the text
 
 Demo (https://mood-tracker-aspen13s-projects.vercel.app/)
