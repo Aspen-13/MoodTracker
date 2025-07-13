@@ -28,3 +28,13 @@
   flex-wrap: wrap;
   margin-top: 1rem;
 }
+
+.selected-emoji {
+  font-size: 2.2rem;
+  transform: scale(1.2);
+  background: rgb(0, 0, 0); /* subtle highlight */
+  padding: 6px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}

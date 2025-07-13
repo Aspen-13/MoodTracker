@@ -5,11 +5,16 @@ type ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
+  disabled?: boolean;
+  classname?: string;
 };
 
-function Button({ children, onClick }: ButtonProps) {
+function Button({ children, onClick, classname }: ButtonProps) {
   return (
-    <button onClick={onClick} className="custom-button">
+    <button
+      onClick={onClick}
+      className={classname ? classname : "custom-button"}
+    >
       {children}
     </button>
   );

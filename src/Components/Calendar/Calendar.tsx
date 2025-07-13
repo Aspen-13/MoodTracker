@@ -12,11 +12,16 @@ const todayDate = new Date().getDate();
 
 function Calendar() {
   const [selectedDays, setSelectedDays] = useState<number | null>(null);
-  const [moods, setMoods] = useState<{ [day: number]: string }>({});
+  const [moods, setMoods] = useState<{
+    [day: number]: { mood: string; note: string };
+  }>({});
 
-  const handleSelectedMood = (emoji: string) => {
+  const handleSelectedMood = (entry: { mood: string; note: string }) => {
     if (selectedDays !== null) {
-      const updated = { ...moods, [selectedDays]: emoji };
+      const updated = {
+        ...moods,
+        [selectedDays]: { mood: entry.mood, note: entry.note },
+      };
       setMoods(updated);
       localStorage.setItem("moods", JSON.stringify(updated));
       setSelectedDays(null);
@@ -32,6 +37,7 @@ function Calendar() {
     <div className="calendar">
       {Array.from({ length: daysInMonth }, (_, i) => {
         const day = i + 1;
+        const entry = moods[day];
         return (
           <div
             key={day}
@@ -39,14 +45,15 @@ function Calendar() {
             onClick={() => setSelectedDays(day)}
           >
             <div className="day"> {day} </div>
-            <div className="emoji-box">{moods[day]}</div>
+            <div className="emoji-box">{entry?.mood}</div>
           </div>
         );
       })}
       {selectedDays !== null && (
         <EmojiPicker
-          onSelect={handleSelectedMood}
+          onSave={handleSelectedMood}
           onClose={() => setSelectedDays(null)}
+          defaultEntry={moods[selectedDays] || { mood: "", note: "" }}
         />
       )}
     </div>
