@@ -9,5 +9,6 @@ Features:
 - Emoji popup overlay
 - Fully responsive & clean UI
 - Highlights today's date
+- Ability to remove a mood if not needed
 
 Demo (https://mood-tracker-aspen13s-projects.vercel.app/)
