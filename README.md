@@ -17,8 +17,8 @@ It also serves as a simple, practical tool for daily reflection.
     <td><img src="public/popUpView.png" width="400"/></td>
   </tr>
   <tr> 
-    <td>*Calendar view with tracked moods*</td>
-    <td>*Pop-up emoji selector and note input for the chosen date*</td>
+    <td>Calendar view with tracked moods</td>
+    <td>Pop-up emoji selector and note input for the chosen date</td>
   </tr>   
 </table>
 
