@@ -21,6 +21,7 @@ It also serves as a simple, practical tool for daily reflection.
     <td>*Pop-up emoji selector and note input for the chosen date*</td>
   </tr>   
 </table>
+
 ---
 
 ## Features:
