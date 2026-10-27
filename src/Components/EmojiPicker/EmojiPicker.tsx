@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import "./EmojiPicker.css";
 import { MOOD_DEFINITION, type MoodEntry } from "../../types/mood";
 import TextArea from "../TextArea/TextArea";
+import { formatEntryDate } from "../../util/formatEntryDate";
 interface props {
   date: string;
   onSave: (entry: { mood: string; note: string; tags: string[] }) => void;
@@ -41,7 +42,7 @@ function EmojiPicker({ date, onSave, onClose, defaultEntry }: props) {
     <div className="emoji-overlay" onClick={onClose}>
       <div className="emoji-popup" onClick={(e) => e.stopPropagation()}>
         <div className="emoji-popup-header">
-          <h3>{date}</h3>
+          <h3>{formatEntryDate(date)}</h3>
           <h3> What you feeling today?</h3>
         </div>
         <div className="emoji-grid">
