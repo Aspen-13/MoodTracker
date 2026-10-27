@@ -139,7 +139,6 @@
   border-color: #8b5cf6;
 }
 
-/* Bottom Action Buttons */
 .emoji-panel-button-span {
   display: flex;
   justify-content: flex-end;
@@ -156,4 +155,22 @@
 .delete-button:hover {
   background: rgba(239, 68, 68, 0.2) !important;
   border-color: #ef4444 !important;
+}
+
+.emoji-popup-date-box {
+  border-radius: 10%;
+  border: 1px solid #434246;
+  width: 20%;
+  padding: 0.3rem;
+  margin: 0 auto;
+}
+
+.emoji-popup-date {
+  font-size: 2.5rem;
+}
+
+.emoji-popup-monthYearCombo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }

@@ -34,6 +34,7 @@ function EmojiPicker({ date, onSave, onClose, defaultEntry }: props) {
     );
   };
 
+  const popupDate = formatEntryDate(date);
   const handleSave = () => {
     if (!selectedEmoji) return;
     onSave({ mood: selectedEmoji, note: moodNote, tags });
@@ -42,7 +43,18 @@ function EmojiPicker({ date, onSave, onClose, defaultEntry }: props) {
     <div className="emoji-overlay" onClick={onClose}>
       <div className="emoji-popup" onClick={(e) => e.stopPropagation()}>
         <div className="emoji-popup-header">
-          <h3>{formatEntryDate(date)}</h3>
+          <div className="emoji-popup-date-box-wrapper">
+            <div className="emoji-popup-date-box">
+              <div className="emoji-popup-day">{popupDate.weekdayShort}</div>
+              <div className="emoji-popup-date">{popupDate.dayNumber}</div>
+              <div className="emoji-popup-monthYearCombo">
+                <span className="emoji-popup-month">
+                  {popupDate.monthShort}
+                </span>
+                <span className="emoji-popup-year">{popupDate.year}</span>
+              </div>
+            </div>
+          </div>
           <h3> What you feeling today?</h3>
         </div>
         <div className="emoji-grid">
