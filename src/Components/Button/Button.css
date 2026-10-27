@@ -11,3 +11,9 @@
 .custom-button:hover {
   transform: scale(1.1);
 }
+
+.custom-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+}

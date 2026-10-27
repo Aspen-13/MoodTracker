@@ -1,37 +1,53 @@
 import { useState } from "react";
 import Button from "../Button/Button";
 import "./EmojiPicker.css";
+import { MOOD_DEFINITION, type MoodEntry } from "../../types/mood";
 import TextArea from "../TextArea/TextArea";
 interface props {
-  onSave: (entry: { mood: string; note: string }) => void;
+  date: string;
+  onSave: (entry: { mood: string; note: string; tags: string[] }) => void;
   onClose: () => void;
-  defaultEntry?: { mood: string; note: string };
+  defaultEntry?: MoodEntry;
 }
 
-const emojis = ["😂", "😒", "😭", "😡", "😐", "😊"];
-function EmojiPicker({ onSave, onClose, defaultEntry }: props) {
+const PRESET_TAGS = [
+  "Work",
+  "Gym",
+  "Date",
+  "Relax",
+  "Stress",
+  "Family",
+  "Sleep",
+];
+
+function EmojiPicker({ date, onSave, onClose, defaultEntry }: props) {
   //use states for the emojis
   const [selectedEmoji, setSelectedEmoji] = useState(defaultEntry?.mood || "");
   //use state for the note
   const [moodNote, setMoodNote] = useState(defaultEntry?.note || "");
+  const [tags, setTags] = useState<string[]>(defaultEntry?.tags || []);
+
+  const toggleTag = (tag: string) => {
+    setTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
+    );
+  };
+
   const handleSave = () => {
-    if (selectedEmoji !== null) {
-      onSave({
-        mood: selectedEmoji,
-        note: moodNote,
-      });
-    }
+    if (!selectedEmoji) return;
+    onSave({ mood: selectedEmoji, note: moodNote, tags });
   };
   return (
     <div className="emoji-overlay" onClick={onClose}>
       <div className="emoji-popup" onClick={(e) => e.stopPropagation()}>
         <h3> What you feeling today?</h3>
         <div className="emoji-grid">
-          {emojis.map((emoji) => (
+          {Object.values(MOOD_DEFINITION).map(({ emoji, label }) => (
             <Button
               key={emoji}
               onClick={() => setSelectedEmoji(emoji)}
-              classname={`${selectedEmoji === emoji ? "selected-emoji" : ""}`}
+              className={`${selectedEmoji === emoji ? "selected-emoji" : ""}`}
+              title={label}
             >
               {emoji}
             </Button>
@@ -48,7 +64,9 @@ function EmojiPicker({ onSave, onClose, defaultEntry }: props) {
           <Button onClick={handleSave} disabled={!selectedEmoji}>
             Save
           </Button>
-          <Button onClick={() => onSave({ mood: "", note: "" })}>Clear</Button>
+          <Button onClick={() => onSave({ mood: "", note: "", tags: [] })}>
+            Clear
+          </Button>
         </div>
       </div>
     </div>

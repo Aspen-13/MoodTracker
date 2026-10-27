@@ -1,58 +1,102 @@
-.calendar {
+.calendar-container {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-nav h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-btn {
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background: #27272a;
+}
+
+.weekdays-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
-  margin: auto;
-  margin-top: 2rem;
-  max-width: 50rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+  color: #a1a1aa;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Always keep 7 cols */
+  gap: 0.5rem;
 }
 
 .day-box {
   position: relative;
-  aspect-ratio: 1/ 1; /* Keep the box a square */
-  background: #000000;
-  border: 1px solid #ddd;
-  padding: clamp(0.2rem, 2vw, 1rem);
-  border-radius: 0.5rem;
+  aspect-ratio: 1 / 1;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 0.75rem;
   cursor: pointer;
-  min-height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  transition:
+    border-color 0.15s ease,
+    transform 0.1s ease;
 }
 
 .day-box:hover {
-  opacity: 0.5;
+  border-color: #71717a;
+  transform: translateY(-2px);
+}
+
+.empty-day {
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+
+.empty-day:hover {
+  transform: none;
 }
 
 .today-day-box {
-  background: rgba(255, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
+  border: 2px solid #8b5cf6;
+}
+
+.day-number {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.5rem;
+  font-size: 0.8rem;
+  color: #a1a1aa;
 }
 
 .emoji-box {
-  font-size: clamp(1.5rem, 2.5rem, 3.5rem);
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
 }
 
-.day {
+.note-indicator {
   position: absolute;
-  top: 4%;
-  left: 6%;
-  color: white;
-  font-weight: 600;
-  font-size: clamp(0.7rem, 1rem, 1.5rem);
-}
-
-@media (max-width: 1100px) {
-  .calendar {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
-@media (max-width: 850px) {
-  .calendar {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  bottom: 0.4rem;
+  width: 4px;
+  height: 4px;
+  background: #a855f7;
+  border-radius: 50%;
 }
