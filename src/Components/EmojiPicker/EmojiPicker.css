@@ -14,7 +14,6 @@
   box-sizing: border-box;
 }
 
-/* Modal Card */
 .emoji-popup {
   background: #121214;
   border: 1px solid #27272a;
@@ -104,14 +103,13 @@
   background-color: #27272a;
 }
 
-.emoji-btn.selected {
+.selected-emoji {
   border-color: #8b5cf6;
   background: rgba(139, 92, 246, 0.15);
   transform: scale(1.1);
   box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
 }
 
-/* Tag Selection */
 .tags-container {
   display: flex;
   flex-direction: column;

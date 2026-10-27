@@ -40,7 +40,10 @@ function EmojiPicker({ date, onSave, onClose, defaultEntry }: props) {
   return (
     <div className="emoji-overlay" onClick={onClose}>
       <div className="emoji-popup" onClick={(e) => e.stopPropagation()}>
-        <h3> What you feeling today?</h3>
+        <div className="emoji-popup-header">
+          <h3>{date}</h3>
+          <h3> What you feeling today?</h3>
+        </div>
         <div className="emoji-grid">
           {Object.values(MOOD_DEFINITION).map(({ emoji, label }) => (
             <Button
