@@ -34,7 +34,7 @@ function Calendar() {
   const handleNextMonth = () => setCurrentDate(new Date(year, month + 1, 1));
 
   const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const firstDayOfWeek = (new Date(year, month, 1).getDate() * 6) % 7;
+  const firstDayOfWeek = (new Date(year, month, 1).getDay() + 6) % 7;
   const todayStr = new Date().toISOString().split("T")[0];
 
   const handleSaveEntry = (entry: {
