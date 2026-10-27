@@ -53,6 +53,20 @@ function EmojiPicker({ date, onSave, onClose, defaultEntry }: props) {
             </Button>
           ))}
         </div>
+        <div className="tags-container">
+          <label className="section-label">Tags:</label>
+          <div className="tags-cloud">
+            {PRESET_TAGS.map((t) => (
+              <Button
+                key={t}
+                className={`tag-pill ${tags.includes(t) ? "active" : ""}`}
+                onClick={() => toggleTag(t)}
+              >
+                {t}
+              </Button>
+            ))}
+          </div>
+        </div>
         <p>{defaultEntry?.note}</p>
         <TextArea
           value={moodNote}
