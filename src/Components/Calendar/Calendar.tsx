@@ -64,13 +64,35 @@ function Calendar() {
     <div className="calendar-container">
       <div className="calendar-nav">
         <Button onClick={handlePrevMonth} className="nav-btn">
-          &#8592;
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
         </Button>
         <h2>
           {currentDate.toLocaleString("default", { month: "long" })} {year}
         </h2>
         <Button onClick={handleNextMonth} className="nav-btn">
-          &#8594;
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
         </Button>
       </div>
 
