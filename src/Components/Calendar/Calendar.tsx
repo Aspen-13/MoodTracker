@@ -64,13 +64,13 @@ function Calendar() {
     <div className="calendar-container">
       <div className="calendar-nav">
         <Button onClick={handlePrevMonth} className="nav-btn">
-          ←
+          &#8592;
         </Button>
         <h2>
           {currentDate.toLocaleString("default", { month: "long" })} {year}
         </h2>
         <Button onClick={handleNextMonth} className="nav-btn">
-          →
+          &#8594;
         </Button>
       </div>
 
